@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Print Timetable | University Timetable Manager</title>
+    <link rel="stylesheet" href="../css/print.css" />
+</head>
+<body>
+<header>
+    <nav class="navbar">
+        <a href="../HomePage/home.html" class="logo">Timetable Manager</a>
+        <a href="../StudyPage/builder.html" class="back">Back to Builder</a>
+    </nav>
+</header>
+
+<main>
+    <section class="print-container">
+        <h1>Timetable Print Preview</h1>
+
+        <!-- Container to render timetable dynamically -->
+        <div id="printTimetable">
+            <!-- Example timetable -->
+            <table>
+                <thead>
+                <tr>
+                    <th>Time</th>
+                    <th>Monday</th>
+                    <th>Tuesday</th>
+                    <th>Wednesday</th>
+                    <th>Thursday</th>
+                    <th>Friday</th>
+                </tr>
+                </thead>
+                <tbody id="timetableBody">
+                <!-- Rows generated via JS -->
+                </tbody>
+            </table>
+        </div>
+
+        <button id="printBtn">Print / Export PDF</button>
+    </section>
+</main>
+
+<script src="../js/print.js"></script>
+</body>
+</html>

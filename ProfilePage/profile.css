@@ -1,0 +1,118 @@
+/* Body & Background */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+body::before, body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+body::before {
+    top: 0; left: 0;
+    background: radial-gradient(circle at top right, #e0f7fa, transparent 70%);
+}
+
+body::after {
+    bottom: 0; right: 0;
+    background: radial-gradient(circle at bottom left, #f8f9fa, transparent 70%);
+}
+
+/* Navbar */
+.navbar {
+    background-color: #0d6efd;
+    color: white;
+    padding: 12px 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 15px;
+}
+
+.navbar a.logout {
+    color: #ffdd57;
+}
+
+/* Profile Hero */
+.profile-hero {
+    min-height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: linear-gradient(135deg, #4cc9f0, #3a0ca3);
+    color: white;
+}
+
+/* Cards Grid */
+.timetable-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.timetable-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    animation: fadeSlideIn 0.5s ease forwards;
+    opacity: 0;
+}
+
+.timetable-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.timetable-card h3 {
+    background-color: #0d6efd;
+    color: white;
+    padding: 12px;
+    margin: 0;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.timetable-card button {
+    margin: 5px auto;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    width: 90%;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.timetable-card .edit-btn { background-color: #0077b6; color: white; }
+.timetable-card .delete-btn { background-color: #d62828; color: white; }
+.timetable-card .export-btn { background-color: #4cc9f0; color: white; }
+
+.timetable-card button:hover {
+    filter: brightness(1.1);
+}
+
+/* Animation Keyframes */
+@keyframes fadeSlideIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+}

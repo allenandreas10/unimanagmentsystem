@@ -1,0 +1,77 @@
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.timetable-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.days-header {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.day-col, .time-col { flex: 1; padding: 10px; border-right: 1px solid #dee2e6; }
+.time-col { width: 80px; background-color: #f1f3f5; font-weight: bold; }
+
+.grid {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr);
+    border: 1px solid #dee2e6;
+}
+
+.grid-cell {
+    border: 1px solid #dee2e6;
+    height: 60px;
+    position: relative;
+}
+
+.module {
+    position: absolute;
+    left: 5%;
+    width: 90%;
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-size: 0.9rem;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.module:active { cursor: grabbing; transform: scale(1.05); }
+
+.add-module {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.grid-cell.drag-over { background: #e0f7fa; transition: 0.2s; }
+.module.dragging { opacity: 0.6; transform: scale(1.05); cursor: grabbing; }
+
+.modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; justify-content: center; align-items: center; }
+.modal.hidden { display: none; }
+.modal-content { background: #fff; padding: 1.5rem; border-radius: 12px; width: 300px; box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+
+.modal-content h3 { margin-bottom: 10px; text-align: center; color: #333; }
+.modal-content form { display: flex; flex-direction: column; gap: 0.5rem; }
+.modal-content input, .modal-content select { padding: 6px; border: 1px solid #ccc; border-radius: 6px; }
+
+.modal-buttons { display: flex; justify-content: space-between; margin-top: 10px; }
+.modal-buttons button { background-color: #0077b6; color: white; border: none; padding: 6px 10px; border-radius: 6px; cursor: pointer; }
+.modal-buttons button:hover { filter: brightness(1.1); }
+.modal-buttons .danger { background-color: #d62828; }
+.modal-buttons .danger:hover { filter: brightness(1.1); }
+
+.grid-cell.conflict { background-color: #ffcccc !important; }
+#printBuilderBtn { background-color: #4cc9f0; color: white; padding: 8px 16px; border: none; border-radius: 6px; cursor: pointer; }
+#printBuilderBtn:hover { background-color: #0096c7; }
+
