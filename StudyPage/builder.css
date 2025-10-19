@@ -1,0 +1,84 @@
+/* builder.css */
+
+body {
+    background-color: #f8f9fa;
+}
+
+.timetable-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.days-header {
+    background-color: #0d6efd;
+    color: white;
+    text-align: center;
+    font-weight: 500;
+    border-radius: 10px 10px 0 0;
+    overflow: hidden;
+}
+
+.day-col, .time-col {
+    flex: 1;
+    padding: 10px;
+    border-right: 1px solid #dee2e6;
+}
+
+.time-col {
+    width: 80px;
+    background-color: #f1f3f5;
+    font-weight: bold;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 80px repeat(5, 1fr);
+    border: 1px solid #dee2e6;
+}
+
+.grid-row {
+    display: contents;
+}
+
+.grid-cell {
+    border: 1px solid #dee2e6;
+    height: 60px;
+    position: relative;
+}
+
+.module {
+    background-color: #0d6efd;
+    color: white;
+    border-radius: 6px;
+    padding: 4px 6px;
+    font-size: 0.9rem;
+    position: absolute;
+    width: 90%;
+    left: 5%;
+    top: 5px;
+    cursor: grab;
+    transition: transform 0.2s ease;
+}
+
+.module:active {
+    cursor: grabbing;
+    transform: scale(1.05);
+}
+
+.add-module {
+    background: white;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.grid-cell.drag-over{
+    background: #e0f7fa;
+    transition: background-color 0.2s ease;
+}
+.module.dragging {
+    opacity: 0.6;
+    transform: scale(1.05);
+    cursor: grabbing;
+}
